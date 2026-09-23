@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy 2 Month Anniversary</title>
+<meta name="theme-color" content="#ffeef0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤍</text></svg>" />
+</head>
+<body>
+
+  <!-- ===== QUIZ GATE (หน้าด่านคำถามก่อนเข้าเว็บ) ===== -->
+  <div class="quiz-gate" id="quizGate">
+    <div class="quiz-gate-content">
+      <div class="quiz-header">
+        <span class="quiz-badge-top">🔒 Memory Gate</span>
+        <h2>ตอบผิดไม่ให้ไปหน้าต่อไป 😏</h2>
+      </div>
+
+      <div class="quiz-container">
+        <!-- ข้อ 1 -->
+        <div class="quiz-card" data-quiz="2">
+          <h3 class="quiz-question">1. ใครทักหาใครก่อนนน? 💬</h3>
+          <div class="quiz-options">
+            <button class="quiz-btn" data-correct="true">ใหม่ทักมาก่อน</button>
+            <button class="quiz-btn" data-correct="true">ใหม่ทักมาก่อนเหมือนกัน</button>
+            <button class="quiz-btn" data-correct="false">แมวเดินเหยียบคีย์บอร์ดทักมา</button>
+          </div>
+        </div>
+
+        <!-- ข้อ 2 -->
+        <div class="quiz-card" data-quiz="0">
+          <h3 class="quiz-question">2. เราเริ่มคุยกันตอนไหน 🌸</h3>
+          <div class="quiz-options">
+            <button class="quiz-btn" data-correct="true">12 กรกฎาคม 2569</button>
+            <button class="quiz-btn" data-correct="false">14 กุมภาพันธ์ 2569</button>
+            <button class="quiz-btn" data-correct="false">24 กรกฎาคม 2569</button>
+          </div>
+        </div>
+
+        <!-- ข้อ 3 -->
+        <div class="quiz-card" data-quiz="1">
+          <h3 class="quiz-question">3. เราเป็นแฟนกันเมื่อไหร่ (*/ω＼*)</h3>
+          <div class="quiz-options">
+            <button class="quiz-btn" data-correct="false">12 กรกฎาคม 2569 (12/7)</button>
+            <button class="quiz-btn" data-correct="true">24 กรกฎาคม 2569 (24/7)</button>
+            <button class="quiz-btn" data-correct="false">1 สิงหาคม 2569 (1/8)</button>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== พื้นหลังหัวใจลอย + พลุกระดาษ ===== -->
+  <div class="hearts-bg" id="heartsBg" aria-hidden="true"></div>
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+  <!-- ===== ปุ่มลอยมุมจอ ===== -->
+  <div class="floating-controls">
+    <button class="fab" id="themeBtn" title="สลับโหมดสว่าง/มืด" aria-label="สลับธีม">🌙</button>
+    <div class="music-wrapper">
+      <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.01" value="0.45" title="ปรับระดับเสียง">
+      <button class="fab" id="musicBtn" title="เปิด/ปิดเพลง" aria-label="เปิดปิดเพลง">🎵</button>
+    </div>
+  </div>
+  <audio id="bgm" loop preload="none" src="assets/bg_music.mp3"></audio>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="home">
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+      <p class="eyebrow reveal">ถึงปีใหม่ ✿</p>
+      <h1 class="hero-title reveal">Happy <em>2 Months</em><br/>Anniversary</h1>
+
+      <div class="counter reveal" id="counter">
+        <div class="count-box"><span class="num" id="cDays">0</span><span class="lbl">วัน</span></div>
+        <div class="count-box"><span class="num" id="cHours">0</span><span class="lbl">ชั่วโมง</span></div>
+        <div class="count-box"><span class="num" id="cMins">0</span><span class="lbl">นาที</span></div>
+        <div class="count-box"><span class="num" id="cSecs">0</span><span class="lbl">วินาที</span></div>
+      </div>
+
+      <p class="since reveal">เราเริ่มต้นกันตั้งแต่ <strong id="sinceDate">—</strong></p>
+      <a class="btn-ghost reveal" href="#journey">เลื่อนลงมาา ↓</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== TIMELINE ===== -->
+    <section class="section" id="journey">
+      <h2 class="section-title reveal">Our Journey</h2>
+      <p class="section-sub reveal">ช่วงเวลาตลอด 2 เดือนที่ผ่านมา</p>
+
+      <div class="timeline">
+        <!-- คัดลอกบล็อก .tl-item เพื่อเพิ่มเหตุการณ์ได้เลย -->
+        <article class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <span class="tl-date">12 / 7 / 2026 🌸</span>
+            <h3>วันที่ใหม่ทักมา</h3>
+            <p>ทำตัวไม่ถูกเลย เพราะไม่คิดว่าคนที่แอบชอบจะทักมา</p>
+            <!-- <img class="tl-img" src="assets/p1.jpg" alt="วันแรกของเรา" onerror="this.remove()" /> -->
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <span class="tl-date">24 / 7 / 2026 🤍</span>
+            <h3>วันที่เราเป็นแฟนกัน</h3>
+            <p>ตอนนั้นตื่นเต้น,เขิลมาก เพราะไม่เคยขอใครเป็นแฟน</p>
+            <!-- <img class="tl-img" src="assets/p2.jpg" alt="เดตแรก" onerror="this.remove()" /> -->
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <span class="tl-date">เดือนที่ 1</span>
+            <h3>เดือนของการเรียนรู้</h3>
+            <p>รู้สึกว่าเราปรับอะไรหลายๆอย่างจนเข้าใจกันมากขึ้น ถึงบางเรื่องจะไม่เข้าใจกันแต่เราทั้งคู่ก็ปรับกันมาตลอดจนเข้าใจกันและกัน</p>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <span class="tl-date">วันนี้</span>
+            <h3>ครบ 2 เดือนแล้ว 💗</h3>
+            <p>ชวนกันเรียน เติบโตและอยู่ไปด้วยกันแบบนี้นานๆนะ</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== REASONS CARDS ===== -->
+    <!-- <section class="section" id="reasons">
+      <h2 class="section-title reveal">Reasons Why I Love You</h2>
+      <p class="section-sub reveal">แตะการ์ดเพื่อเปิดดูข้อความข้างในนะ ✨</p> -->
+
+      <!-- <div class="cards"> -->
+        <!-- คัดลอกบล็อก .flip-card เพื่อเพิ่มเหตุผลได้เลย -->
+        <!-- <div class="flip-card reveal" tabindex="0" role="button" aria-label="เปิดการ์ดเหตุผลที่ 1">
+          <div class="flip-inner">
+            <div class="flip-face front"><span class="ico">💌</span><span class="no">1</span><p>แตะเลย</p></div>
+            <div class="flip-face back"><p>เพราะรอยยิ้มของเธอ ทำให้วันที่แย่ที่สุดของเรากลายเป็นวันที่พอไหว</p></div>
+          </div>
+        </div>
+
+        <div class="flip-card reveal" tabindex="0" role="button" aria-label="เปิดการ์ดเหตุผลที่ 2">
+          <div class="flip-inner">
+            <div class="flip-face front"><span class="ico">🌷</span><span class="no">2</span><p>แตะเลย</p></div>
+            <div class="flip-face back"><p>เพราะเธอฟังเราเสมอ แม้เรื่องที่เราเล่าจะไม่สำคัญกับใครเลย</p></div>
+          </div>
+        </div>
+
+        <div class="flip-card reveal" tabindex="0" role="button" aria-label="เปิดการ์ดเหตุผลที่ 3">
+          <div class="flip-inner">
+            <div class="flip-face front"><span class="ico">☕</span><span class="no">3</span><p>แตะเลย</p></div>
+            <div class="flip-face back"><p>เพราะอยู่กับใหม่แล้วรู้สึกเป็นตัวเอง</p></div>
+          </div>
+        </div>
+
+        <div class="flip-card reveal" tabindex="0" role="button" aria-label="เปิดการ์ดเหตุผลที่ 5">
+          <div class="flip-inner">
+            <div class="flip-face front"><span class="ico">🎧</span><span class="no">5</span><p>แตะเลย</p></div>
+            <div class="flip-face back"><p>เพราะเพลงธรรมดา ๆ กลายเป็นเพลงโปรด แค่เพราะเคยฟังกับเธอ</p></div>
+          </div>
+        </div>
+
+      </div> -->
+    </section>
+
+    <!-- ===== LOVE LETTER ===== -->
+    <section class="section" id="letter">
+      <h2 class="section-title reveal">A Letter For You</h2>
+      <p class="section-sub reveal">มีจดหมายให้… ลองอ่านดูเส้ 💌</p>
+
+      <div class="envelope-wrap reveal">
+        <button class="envelope" id="envelope" aria-label="เปิดจดหมาย">
+          <span class="env-body"></span>
+          <span class="env-paper"></span>
+          <span class="env-front"></span>
+          <span class="env-flap"></span>
+          <span class="env-seal">💘</span>
+        </button>
+        <p class="hint" id="envHint">แตะเพื่อเปิดอ่าน</p>
+      </div>
+    </section>
+
+    <!-- ===== SECRET ===== -->
+    <section class="section secret-section">
+      <h2 class="section-title reveal">One Last Thing…</h2>
+      <button class="btn-secret reveal" id="secretBtn">กดตรงนี้นะ 🎁</button>
+      <p class="secret-msg" id="secretMsg">รักนะ… ครบ 2 เดือนแล้ว 🤍</p>
+    </section>
+
+    <section class="ending">
+    <h2 class="ending-title reveal">To be continued<span class="inf">∞</span></h2>
+    <div class="beat reveal"><svg viewBox="0 0 300 40" preserveAspectRatio="none"><polyline points="0,20 60,20 75,6 90,34 105,20 150,20 165,10 180,30 195,20 300,20"/></svg></div>
+  </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>ใหม่ 💗</p>
+    <p class="small"> Made By <strong class="footer-author">Mix ✏️</strong></p>
+  </footer>
+  
+
+  <!-- ===== OVERLAY จดหมาย ===== -->
+  <div class="letter-overlay" id="letterOverlay" aria-hidden="true">
+    <div class="paper" role="dialog" aria-modal="true" aria-label="จดหมายรัก">
+      <button class="paper-close" id="paperClose" aria-label="ปิดจดหมาย">✕</button>
+      <h3>ถึงปีใหม่</h3>
+      <!-- ✏️ แก้ข้อความจดหมายตรงนี้ -->
+      <p>สองเดือนที่ผ่านมา อาจจะไม่ยาวพอจะเรียกว่า "นาน" แต่มันยาวพอที่ทำให้จะรู้ว่า… ความรักเป็นยังไง</p>
+      <p>ขอบคุณนะที่ทักมาในวันนั้น และยอมหันมาคุยแม้ในวันที่ไม่เข้าใจกัน ขอบคุณที่ทำให้วันธรรมดาๆกลายเป็นวันที่พิเศษ</p>
+      <p>ไม่รู้หรอกว่าอนาคตจะเป็นยังไง แต่จะทำปัจจุบันให้ดีที่สุดนะ</p>
+      <p class="sign"><br /><em>— จากมิกซ์กี้ ^^</em></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
